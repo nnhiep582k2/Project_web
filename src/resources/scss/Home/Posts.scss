@@ -1,0 +1,142 @@
+@import '../GlobalStyles/variables';
+
+.post {
+    background: $white;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 0 1px 1px rgb(0 0 0 / 1%);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.posts__above {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.above__left {
+    display: flex;
+    align-items: center;
+}
+
+.above__right {
+    position: relative;
+
+    svg {
+        font-size: 2.8rem;
+        cursor: pointer;
+    }
+}
+
+.wrap__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.info__post {
+    margin-left: 10px;
+
+    h3 {
+        color: $secondary-color;
+        cursor: pointer;
+    }
+
+    p {
+        color: $font-color;
+        user-select: none;
+    }
+}
+
+.posts__center {
+    padding: 20px 6px;
+    color: $secondary-color;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-align: justify;
+}
+
+.posts__below {
+    .below__wrap {
+        margin: 0 auto;
+        max-width: 400px;
+        max-height: 480px;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+    }
+}
+
+.posts__options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: $white;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+
+    ul {
+        list-style: none;
+        padding: 6px 0;
+
+        li {
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+
+            svg {
+                margin-right: 6px;
+                font-size: 1.6rem;
+            }
+
+            &:hover {
+                background: $black;
+                color: $primary-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.sub__post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    user-select: none;
+}
+
+.sub__post__like,
+.sub__post__dislike,
+.sub__post__share {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 20px;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.sub__post--active {
+    color: $secondary-color;
+    font-weight: 700;
+}

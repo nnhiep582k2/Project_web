@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 1.6rem;
+}
+
+/* Grid system */
+.grid {
+    width: 100%;
+    display: block;
+}
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.col_lg_5 {
+    width: 20%;
+}
+.col_lg_5_3 {
+    width: 60%;
+}

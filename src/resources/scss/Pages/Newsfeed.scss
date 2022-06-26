@@ -1,0 +1,228 @@
+@import '../GlobalStyles/variables';
+
+#newsfeed {
+    margin-left: 20%;
+    padding: 18px 0;
+    font-size: 1.4rem;
+
+    @media (max-width: 739px) {
+        width: 100%;
+        margin-left: 0;
+        padding: 18px 22px;
+    }
+}
+
+.newsfeed__wrap {
+    z-index: 9;
+}
+
+.newsfeed__post {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: $white;
+    padding: 0 15px;
+    box-shadow: 0 0 1px 1px rgb(0 0 0 / 1%);
+    border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: 8;
+
+    .newsfeed__input {
+        font-size: 1.5rem;
+        flex: 1;
+        height: 70px;
+        border: none;
+        outline: none;
+
+        &::placeholder {
+            color: $font-color;
+            font-weight: 600;
+        }
+    }
+
+    .newsfeed__wrap__img {
+        width: 40px;
+        height: 40px;
+        margin: 15px 18px 15px 0;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 739px) {
+            width: 40px;
+        }
+    }
+}
+
+.newsfeed__post__btn {
+    width: auto;
+    height: 40px;
+    font-size: 1.4rem;
+    margin: 0 0 0 auto;
+}
+
+.newsfeed__post__hidden {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0 15px 15px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background: $white;
+    box-shadow: 0 0 1px 1px rgb(0 0 0 / 1%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.newsfeed__hidden__label {
+    margin-right: 30px;
+    width: 100%;
+}
+
+.newsfeed__hidden__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50px;
+    margin: 0 30px 0 0;
+    padding: 0 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: black;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: $primary-color;
+    text-decoration: none;
+    cursor: pointer;
+    animation: hiddenBtn 0.26s ease-out;
+
+    svg {
+        font-size: 1.6rem;
+        margin-right: 2px;
+    }
+
+    &:hover {
+        background-color: rgba($primary-color, 0.8);
+    }
+
+    &:active {
+        color: $primary-color;
+        background-color: black;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @keyframes hiddenBtn {
+        from {
+            opacity: 0;
+            transform: translateY(-22px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 739px) {
+        svg {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.newsfeed__hidden__wrap,
+.newsfeed__hidden__wrap2 {
+    position: relative;
+    width: 100%;
+    margin-right: 30px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.newsfeed__tags,
+.newsfeed__checkin {
+    position: absolute;
+    top: 140%;
+    left: 0;
+    width: 100%;
+    background: $white;
+    border-radius: 10px;
+    display: none;
+    animation: subAppear 0.2s ease-in;
+    padding: 12px 0;
+    z-index: 8;
+
+    span {
+        display: block;
+        padding: 4px 15px;
+        font-weight: 500;
+
+        &:hover {
+            background: $black;
+            color: $primary-color;
+            border-radius: 10px;
+        }
+    }
+
+    @keyframes subAppear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 739px) {
+        min-width: 200%;
+        left: -50%;
+        text-align: center;
+        span {
+            padding: 8px 15px;
+        }
+    }
+}
+
+.newsfeed__checkin {
+    @media (max-width: 739px) {
+        left: -86%;
+    }
+}
+
+.newsfeed__tags__input,
+.newsfeed__checkin__input {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 4px 6px;
+    outline: none;
+    color: rgb(92, 92, 92);
+}

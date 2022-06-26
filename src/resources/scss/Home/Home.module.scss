@@ -1,0 +1,10 @@
+@import '../GlobalStyles/variables';
+
+#home {
+    background: #fafbfc;
+    width: 100%;
+    min-height: 100vh;
+}
+.main {
+    padding: $header-height 0 16px;
+}
